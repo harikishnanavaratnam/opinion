@@ -1,38 +1,168 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* App container */
 .App {
   text-align: center;
+  padding: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Header styles */
+.dashboard-header {
+  background-color: #3f51b5;
   color: white;
+  padding: 1.5rem 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.dashboard-header p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* Chart grid styles */
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* ChartViewer container styles */
+.chart-viewer {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-viewer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.chart-viewer h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.chart-viewer button {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.chart-viewer button:hover {
+  background-color: #303f9f;
+}
+
+.chart-viewer img {
+  margin-top: 1rem;
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-header h1 {
+      font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .dashboard-header p {
+      font-size: 0.9rem;
   }
+}
+
+
+/* Refresh Button Styling */
+.chart-viewer button {
+  background-color: #4caf50; /* Primary green color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chart-viewer button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+  transform: translateY(-3px); /* Raise the button slightly */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhance shadow */
+}
+
+.chart-viewer button:active {
+  background-color: #388e3c; /* Even darker green when clicked */
+  transform: translateY(1px); /* Slight depress effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Reduce shadow */
+}
+
+/* Disabled Button Styling */
+.chart-viewer button:disabled {
+  background-color: #a5d6a7; /* Light green to indicate disabled state */
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  color: #f1f1f1;
+}
+
+
+/* Report Generator Button Styling */
+.report-generator button {
+  background-color: #ff9800; /* Orange color for contrast */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 2rem;
+}
+
+.report-generator button:hover {
+  background-color: #f57c00; /* Darker orange on hover */
+  transform: translateY(-3px); /* Raise the button slightly */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhance shadow */
+}
+
+.report-generator button:active {
+  background-color: #e65100; /* Even darker orange when clicked */
+  transform: translateY(1px); /* Slight depress effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Reduce shadow */
+}
+
+/* Disabled Button Styling for Report Generator */
+.report-generator button:disabled {
+  background-color: #ffb74d; /* Light orange to indicate disabled state */
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  color: #f1f1f1;
 }
